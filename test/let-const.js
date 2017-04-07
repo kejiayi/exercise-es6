@@ -194,19 +194,19 @@ describe('Proxy', function() {
 		assert.equal(proxy(), 'I am applay');
 	});
 });
-//describe('Proxy', function() {
-//	it('ownKeys 拦截对象自身属性的读取操作', function() {
-//		let target = {
-//			_one: 'one',
-//			_two: 'two'
-//		}
-//		let handler = {
-//			ownKeys: function(target) {
-//				return Reflect.ownKeys(target).filter(key => key[0] !== '_')
-//			}
-//		}
-//	});
-//});
+describe('Proxy', function() {
+	it('ownKeys 拦截对象自身属性的读取操作', function() {
+		let target = {
+			_one: 'one',
+			_two: 'two'
+		}
+		let handler = {
+			ownKeys: function(target) {
+				return Reflect.ownKeys(target).filter(key => key[0] !== '_')
+			}
+		}
+	});
+});
 describe('遍历', function() {
 	it('for in/for of/forEach', function() {
 		let testArray = [
